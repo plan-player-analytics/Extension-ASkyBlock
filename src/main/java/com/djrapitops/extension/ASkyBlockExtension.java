@@ -51,6 +51,7 @@ import java.util.UUID;
         iconName = "bookmark",
         elementOrder = {ElementOrder.VALUES}
 )
+@TabOrder({"Islands", "Challenges"})
 public class ASkyBlockExtension implements DataExtension {
 
     private ASkyBlockAPI api;
