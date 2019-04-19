@@ -54,10 +54,7 @@ import java.util.UUID;
 @TabOrder({"Islands", "Challenges"})
 public class ASkyBlockExtension implements DataExtension {
 
-    private ASkyBlockAPI api;
-
     public ASkyBlockExtension() {
-        api = ASkyBlockAPI.getInstance();
     }
 
     @Override
@@ -65,7 +62,7 @@ public class ASkyBlockExtension implements DataExtension {
         return new CallEvents[]{
                 CallEvents.PLAYER_JOIN,
                 CallEvents.PLAYER_LEAVE,
-                CallEvents.SERVER_EXTENSION_REGISTER
+                CallEvents.SERVER_PERIODICAL
         };
     }
 
@@ -79,7 +76,7 @@ public class ASkyBlockExtension implements DataExtension {
     )
     @Tab("Islands")
     public boolean hasIsland(UUID playerUUID) {
-        return api.hasIsland(playerUUID);
+        return ASkyBlockAPI.getInstance().hasIsland(playerUUID);
     }
 
     @Conditional("hasIsland")
@@ -92,7 +89,7 @@ public class ASkyBlockExtension implements DataExtension {
     )
     @Tab("Islands")
     public String islandName(UUID playerUUID) {
-        String name = api.getIslandName(playerUUID);
+        String name = ASkyBlockAPI.getInstance().getIslandName(playerUUID);
         return name != null ? name : "-";
     }
 
@@ -106,7 +103,7 @@ public class ASkyBlockExtension implements DataExtension {
     )
     @Tab("Islands")
     public long islandLevel(UUID playerUUID) {
-        return api.getLongIslandLevel(playerUUID);
+        return ASkyBlockAPI.getInstance().getLongIslandLevel(playerUUID);
     }
 
     @Conditional("hasIsland")
@@ -119,7 +116,7 @@ public class ASkyBlockExtension implements DataExtension {
     )
     @Tab("Islands")
     public long islandResets(UUID playerUUID) {
-        return api.getResetsLeft(playerUUID);
+        return ASkyBlockAPI.getInstance().getResetsLeft(playerUUID);
     }
 
     @NumberProvider(
@@ -131,7 +128,7 @@ public class ASkyBlockExtension implements DataExtension {
     )
     @Tab("Challenges")
     public long challengesCompleted(UUID playerUUID) {
-        return api.getChallengeStatus(playerUUID).values().stream().filter(value -> value).count();
+        return ASkyBlockAPI.getInstance().getChallengeStatus(playerUUID).values().stream().filter(value -> value).count();
     }
 
     @PercentageProvider(
@@ -143,7 +140,7 @@ public class ASkyBlockExtension implements DataExtension {
     )
     @Tab("Challenges")
     public double challengeProgress(UUID playerUUID) {
-        Map<String, Boolean> challengeStatus = api.getChallengeStatus(playerUUID);
+        Map<String, Boolean> challengeStatus = ASkyBlockAPI.getInstance().getChallengeStatus(playerUUID);
         double max = challengeStatus.size();
         return challengeStatus.values().stream().filter(value -> value).count() * 1.0 / max;
     }
@@ -151,7 +148,7 @@ public class ASkyBlockExtension implements DataExtension {
     @TableProvider(tableColor = Color.LIGHT_BLUE)
     @Tab("Challenges")
     public Table completedChallenges(UUID playerUUID) {
-        Map<String, Integer> challengeTimes = api.getChallengeTimes(playerUUID);
+        Map<String, Integer> challengeTimes = ASkyBlockAPI.getInstance().getChallengeTimes(playerUUID);
         Table.Factory table = Table.builder()
                 .columnOne("Challenge", Icon.called("bookmark").build())
                 .columnTwo("Times completed", Icon.called("check").build());
@@ -181,7 +178,7 @@ public class ASkyBlockExtension implements DataExtension {
     )
     @Tab("Islands")
     public String islandWorld() {
-        return api.getIslandWorld().getName();
+        return ASkyBlockAPI.getInstance().getIslandWorld().getName();
     }
 
     @NumberProvider(
@@ -192,7 +189,7 @@ public class ASkyBlockExtension implements DataExtension {
             iconColor = Color.GREEN
     )
     public long islandCount() {
-        return api.getIslandCount();
+        return ASkyBlockAPI.getInstance().getIslandCount();
     }
 
 }
