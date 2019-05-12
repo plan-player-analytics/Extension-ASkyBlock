@@ -85,7 +85,8 @@ public class ASkyBlockExtension implements DataExtension {
             description = "Name of the player's island",
             iconName = "street-view",
             iconColor = Color.GREEN,
-            priority = 99
+            priority = 99,
+            showInPlayerTable = true
     )
     @Tab("Islands")
     public String islandName(UUID playerUUID) {
@@ -124,7 +125,8 @@ public class ASkyBlockExtension implements DataExtension {
             description = "How many challenges has the player completed",
             iconName = "bookmark",
             iconColor = Color.GREEN,
-            priority = 100
+            priority = 100,
+            showInPlayerTable = true
     )
     @Tab("Challenges")
     public long challengesCompleted(UUID playerUUID) {

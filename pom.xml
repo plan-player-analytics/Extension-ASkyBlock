@@ -6,7 +6,7 @@
 
     <groupId>com.djrapitops</groupId>
     <artifactId>Extension-ASkyBlock</artifactId>
-    <version>3.0.9.4-R0.3</version>
+    <version>3.0.9.4-R0.4</version>
     <build>
         <plugins>
             <plugin>
@@ -50,7 +50,7 @@
         <dependency> <!-- Plan API -->
             <groupId>com.djrapitops</groupId>
             <artifactId>Plan-api</artifactId>
-            <version>0.0.4</version>
+            <version>0.0.5</version>
             <scope>provided</scope>
         </dependency>
 
