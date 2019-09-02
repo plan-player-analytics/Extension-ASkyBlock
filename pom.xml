@@ -6,7 +6,7 @@
 
     <groupId>com.djrapitops</groupId>
     <artifactId>Extension-ASkyBlock</artifactId>
-    <version>3.0.9.4-R0.4</version>
+    <version>3.0.9.4-R0.5</version>
     <build>
         <plugins>
             <plugin>

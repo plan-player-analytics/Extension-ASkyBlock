@@ -190,6 +190,7 @@ public class ASkyBlockExtension implements DataExtension {
             iconName = "street-view",
             iconColor = Color.GREEN
     )
+    @Tab("Islands")
     public long islandCount() {
         return ASkyBlockAPI.getInstance().getIslandCount();
     }
