@@ -1,5 +1,5 @@
 /*
-    Copyright(c) 2019 Risto Lahtela (Rsl1122)
+    Copyright(c) 2019 AuroraLS3
 
     The MIT License(MIT)
 
@@ -20,7 +20,7 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
 */
-package com.djrapitops.extension;
+package net.playeranalytics.extension.askyblock;
 
 import com.djrapitops.plan.extension.CallEvents;
 import com.djrapitops.plan.extension.DataExtension;
@@ -38,7 +38,7 @@ import java.util.UUID;
 /**
  * Template for new DataExtension.
  *
- * @author Rsl1122
+ * @author AuroraLS3
  */
 @PluginInfo(name = "ASkyBlock", iconName = "street-view", iconFamily = Family.SOLID, color = Color.LIGHT_BLUE)
 @TabInfo(

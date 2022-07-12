@@ -1,5 +1,5 @@
 /*
-    Copyright(c) 2019 Risto Lahtela (Rsl1122)
+    Copyright(c) 2019 AuroraLS3
 
     The MIT License(MIT)
 
@@ -20,7 +20,7 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
 */
-package com.djrapitops.extension;
+package net.playeranalytics.extension.askyblock;
 
 import com.djrapitops.plan.extension.DataExtension;
 import com.djrapitops.plan.extension.extractor.ExtensionExtractor;
@@ -31,7 +31,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Test for the implementation of the new extension
  *
- * @author Rsl1122
+ * @author AuroraLS3
  */
 class ExtensionImplementationTest {
 
